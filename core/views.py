@@ -26,7 +26,7 @@ def about(request):
 def portfolio(request):
     return HttpResponse(html_base + 
                         """
-                        <h2>portfolio</h2>
+                        <h2>Portfolio</h2>
                         <p>Este es el portfolio</p>
                         """)
 def contact(request):
