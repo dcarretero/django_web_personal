@@ -1,6 +1,5 @@
 from django.shortcuts import render, HttpResponse
-html_base= """
-<h1>Mi web personal</h1>
+html_base ="""<h1>Mi web personal</h1>
 <ul>
     <li><a href = "/">Portada</a></li>
     <li><a href = "/about-me">Acerca de</a></li>
@@ -10,28 +9,13 @@ html_base= """
 """
 # Create your views here.
 def home(request):
+    return render(request, 'core/home.html')
 
-    return HttpResponse(html_base + """ 
-                        <h2>Portada</h2>
-                        <p>Esto es la portada</p>
-                        """
-                        )
 def about(request):
-    return HttpResponse(html_base + 
-                        """
-                        <h2>Acerca de</h2>
-                        <p>Me llamo Daniel y soy programador</p>
-                        """)
+    return render(request, 'core/about.html')
     
 def portfolio(request):
-    return HttpResponse(html_base + 
-                        """
-                        <h2>Portfolio</h2>
-                        <p>Este es el portfolio</p>
-                        """)
+    return render(request,'core/portfolio.html')
+
 def contact(request):
-    return HttpResponse(html_base + 
-                        """
-                        <h2>Contacto</h2>
-                        <p>Estos son los datos de contacto</p>
-                        """)
+    return render(request,'core/contact.html')
