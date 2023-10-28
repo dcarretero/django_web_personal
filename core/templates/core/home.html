@@ -1,7 +1,17 @@
 {% extends 'core/base.html' %}
 
+
+{% block title %}Mi blog personal{% endblock title %}
+    
+
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock background %}
+    
+{% block headers %}
+<h1>Daniel Carretero</h1>
+<span class="subheading">IT Project Manager</span>
+{% endblock headers %}
+    
 {% block content %}
-<h2>Portada</h2>
-<p>Esto es la portada</p>
+
 {% endblock content %}
     

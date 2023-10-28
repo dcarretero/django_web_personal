@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Mi blog personal</title>
+    <title>{% block blockname %}{% endblock blockname %}</title>
 
     <!-- Estilos y fuentes del template  -->
     {% load static %}
@@ -48,26 +48,28 @@
     </nav>
 
     <!-- Cabecera -->
-    <header class="masthead" style="background-image: url('{% static 'core/img/home-bg.jpg' %}')">
+    <header class="masthead" style="background-image: url('{% block background %}{% endblock background %}')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Daniel Carretero</h1>
-              <span class="subheading">IT Project Manager</span>
+              {% block headers %}{% endblock headers %}
+
             </div>
           </div>
         </div>
       </div>
     </header>
     <!--Contenido-->
-    {% block content %}
-        
-    {% endblock content %}
-        
+    <div class="container">
 
-    <!-- Pié de página -->
+    {% block content %}{% endblock content %}
+  </div>  
+  
+  {% if request.path != '/' %}<hr>{% endif %}
+
+    <!-- P)ié de página -->
     <footer>
       <div class="container">
         <div class="row">
